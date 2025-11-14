@@ -62,7 +62,9 @@ const sendEmail = (
 				setSuccess(true);
 			},
 			(error) => {
-				alert(error.text);
+				setLoading(false);
+				console.error("Email sending failed:", error);
+				errorMessage("Failed to send ticket email. Please contact the event organizer.");
 			}
 		);
 };
